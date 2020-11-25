@@ -1,0 +1,42 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Application de saisie de coordonnées
+    link(rel="stylesheet" href="/css/bootstrap.css")
+  body
+    ul(class="nav nav-tabs")
+      li(class="nav-item")
+        a(class="nav-link active" href="/") Formulaire
+      li(class="nav-item")
+        a(class="nav-link" href="/list") Consulter les coordonnées    
+    h1(class="text-center mt-2 mb-5") Saisie de coordonnées
+    if info == 'true'
+      div(class="alert alert-success mx-auto" role="alert" style="width: 600px") Les coordonnées ont bien été enregistré !
+    if info == 'false'
+      div(class="alert alert-danger mx-auto" role="alert" style="width: 600px") Une erreur c'est produite !
+    div(class="card mx-auto my-3" style="width: 600px")
+      form(class="m-5" action="/add" method="post")
+        div(class="form-group")
+          label Nom :
+          input(type="text" class="form-control" placeholder="Nom" name="nom" required)
+        div(class="form-group")
+          label Prénom :
+          input(type="text" class="form-control" placeholder="Prénom" name="prenom" required)
+        div(class="form-group")
+          label Date de naissance :
+          input(type="date" class="form-control" name="date" required)
+        div(class="form-group")
+          label Adresse mail :
+          input(type="email" class="form-control" placeholder="exemple@domain.com" name="mail" required)
+        div(class="form-group")
+          label Adresse :
+          input(type="text" class="form-control" placeholder="Adresse" name="adresse" required)
+        div(class="form-group")
+          label Ville :
+          input(type="text" class="form-control" placeholder="Ville" name="ville" required)
+        div(class="form-group")
+          label Code Postal :
+          input(type="text" maxlength="5" class="form-control" placeholder="Code Postale" name="cp" required)
+        button(type="submit" class="btn btn-primary") Envoyé
+        

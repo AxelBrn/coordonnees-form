@@ -1,0 +1,35 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Application de saisie de coordonnées
+    link(rel="stylesheet" href="/css/bootstrap.css")
+  body
+    ul(class="nav nav-tabs")
+      li(class="nav-item")
+        a(class="nav-link" href="/") Formulaire
+      li(class="nav-item")
+        a(class="nav-link active" href="/list") Consulter les coordonnées    
+    h1(class="text-center mt-2 mb-5") Liste des coordonnées
+    table(class="table table-striped m-auto" style="width: 90%")
+      thead(class="thead-dark") 
+        tr
+          th(scope="col") #
+          th(scope="col") Nom
+          th(scope="col") Prénom
+          th(scope="col") Mail
+          th(scope="col") Date de naissance
+          th(scope="col") Adresse
+          th(scope="col") Ville
+          th(scope="col") Code Postal
+      tbody
+        each row in rows
+          tr
+            th(scope="row")= row.id
+            td= row.lastname
+            td= row.firstname
+            td= row.mail
+            td= date(row.date_naissance)
+            td= row.adresse
+            td= row.ville
+            td= row.cp
