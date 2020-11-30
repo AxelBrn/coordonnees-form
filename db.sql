@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS customers;
+
 CREATE TABLE customers 
 ( 
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -9,4 +11,4 @@ CREATE TABLE customers
     ville varchar(150), 
     cp varchar(5), 
     CONSTRAINT PK_Customers PRIMARY KEY (id) 
-)ENGINE=INNODB;
+)ENGINE=INNODB ENCRYPTED=YES ENCRYPTION_KEY_ID=1;
